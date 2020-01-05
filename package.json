@@ -32,15 +32,18 @@
   },
   "homepage": "https://github.com/fosteev/failbase#readme",
   "dependencies": {
+    "connect-mongo": "^3.2.0",
     "express": "^4.17.1",
+    "fs-readfile-promise": "^3.0.1",
     "multiparty": "^4.2.1",
     "nodemon": "^1.18.9",
     "typescript": "^3.7.4",
-    "fs-readfile-promise": "^3.0.1"
+    "mongoose": "^5.8.4"
   },
   "devDependencies": {
     "@types/express": "^4.17.1",
     "@types/fs-readfile-promise": "^3.0.0",
+    "@types/mongoose": "^5.5.38",
     "ws": "3.3.2"
   }
 }

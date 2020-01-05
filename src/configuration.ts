@@ -2,7 +2,8 @@ import fsReadFilePromise from 'fs-readfile-promise';
 
 interface configuration {
     headers: object,
-    port: number
+    port: number,
+    mongoUrl: string
 }
 
 class Configuration {
@@ -16,11 +17,12 @@ class Configuration {
         const configuration = await this.getConfiguration();
         return {
             headers: configuration.headers,
-            port: configuration.port
+            port: configuration.port,
+            mongoUrl: configuration.mongo
         }
     }
 
-    async getConfiguration(): Promise<configuration> {
+    async getConfiguration(): Promise<any> {
         try {
             const buffer: string = await fsReadFilePromise(this.path, 'utf8');
             return JSON.parse(buffer);
