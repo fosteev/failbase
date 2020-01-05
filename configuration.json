@@ -1,0 +1,9 @@
+{
+  "headers": {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials": false,
+    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+    "Access-Control-Allow-Methods": "POST, PUT, GET, DELETE"
+  },
+  "port": 3000
+}
