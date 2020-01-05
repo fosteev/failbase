@@ -33,8 +33,14 @@ class Server {
         this.app.post('/project', projectController.addProject);
     }
 
+    private parsingRequest(): void {
+        this.app.use(express.json()) // for parsing application/json
+        this.app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+    }
+
     public start(): void {
         this.setHeaders();
+        this.parsingRequest();
         this.initRoutes();
 
         if (typeof this.port !== 'number') {
