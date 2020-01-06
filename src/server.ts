@@ -3,6 +3,7 @@ import {Request, Response} from "express";
 import mongoose from "mongoose";
 import * as homeController from './controllers/home';
 import * as projectController from "./controllers/project";
+import * as statisticController from "./controllers/statistic";
 
 class Server {
     private app: any
@@ -30,7 +31,9 @@ class Server {
     private initRoutes(): void {
         this.app.get('/', homeController.index);
         this.app.get('/projects', projectController.projects);
-        this.app.post('/project', projectController.addProject);
+        this.app.post('/project/:name', projectController.pushProject);
+        this.app.get('/project/:name', projectController.getProjectMessages);
+        this.app.get('/statistic', statisticController.statistic);
     }
 
     private parsingRequest(): void {

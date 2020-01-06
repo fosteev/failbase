@@ -10,5 +10,3 @@ configuration.parsingConfiguration().then(config => {
     }
     server.start();
 })
-
-

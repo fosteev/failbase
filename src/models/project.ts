@@ -4,6 +4,10 @@ const schema = new Schema({
         type: String,
         required: true
     },
+    count: {
+        type: Number,
+        default: 0
+    },
     date: {
         type: Date,
         required: true
