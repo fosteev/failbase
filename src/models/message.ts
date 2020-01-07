@@ -18,6 +18,9 @@ const schema = new Schema({
     date: {
         type: Date,
         required: true
+    },
+    url: {
+        type: String
     }
 });
 

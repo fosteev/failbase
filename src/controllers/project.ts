@@ -48,11 +48,12 @@ const encrimentProjectCount = async (name: string) => {
 
 export const pushProject = async (req: Request, res: Response) => {
     const {name} = req.params;
-    const {header, message, additional_json} = req.body;
+    const {header, message, additional_json, url} = req.body;
 
     await encrimentProjectCount(name);
 
     const messageModel = new Message({
+        url: url,
         project: name,
         head: header,
         message: message,
