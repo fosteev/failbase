@@ -6,5 +6,5 @@
     "Access-Control-Allow-Methods": "POST, PUT, GET, DELETE"
   },
   "port": 3000,
-  "mongo": "mongodb://localhost/my_database"
+  "mongo": "mongodb://ip/my_database"
 }
