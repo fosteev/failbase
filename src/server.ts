@@ -34,6 +34,7 @@ class Server {
         this.app.post('/project/:name', projectController.pushProject);
         this.app.get('/project/:name', projectController.getProjectMessages);
         this.app.get('/statistic', statisticController.statistic);
+        this.app.get('/projects/all', projectController.allMessages);
     }
 
     private parsingRequest(): void {

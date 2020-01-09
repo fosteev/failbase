@@ -21,6 +21,9 @@ const schema = new Schema({
     },
     url: {
         type: String
+    },
+    code: {
+        type: Number
     }
 });
 

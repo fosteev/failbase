@@ -48,9 +48,7 @@ const encrimentProjectCount = async (name: string) => {
 
 export const pushProject = async (req: Request, res: Response) => {
     const {name} = req.params;
-    const {header, message, additional_json, url} = req.body;
-
-    await encrimentProjectCount(name);
+    const {header, message, additional_json, url, code} = req.body;
 
     const messageModel = new Message({
         url: url,
@@ -62,6 +60,8 @@ export const pushProject = async (req: Request, res: Response) => {
     });
 
     await messageModel.save();
+
+    await encrimentProjectCount(name);
     res.send('Pushed');
 };
 
@@ -69,4 +69,8 @@ export const getProjectMessages = async (req: Request, res: Response) => {
     const {name} = req.params;
     const messages = await Message.find({project: name});
     res.json(messages);
+};
+
+export const allMessages = async (req: Request, res: Response) => {
+    res.json(await Message.find());
 }
