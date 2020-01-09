@@ -50,9 +50,11 @@ export const pushProject = async (req: Request, res: Response) => {
     const {name} = req.params;
     const {header, message, additional_json, url, code} = req.body;
 
+    const projectName = name.split('.').join('_');
+
     const messageModel = new Message({
         url: url,
-        project: name,
+        project: projectName,
         head: header,
         message: message,
         additional_json: additional_json,
@@ -61,8 +63,8 @@ export const pushProject = async (req: Request, res: Response) => {
 
     await messageModel.save();
 
-    await encrimentProjectCount(name);
-    res.send('Pushed');
+    await encrimentProjectCount(projectName);
+    res.send('Pushed!!');
 };
 
 export const getProjectMessages = async (req: Request, res: Response) => {
